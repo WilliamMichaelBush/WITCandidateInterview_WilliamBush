@@ -1,0 +1,4 @@
+wbush_priorityscorefromrecorddatapoints: |-
+    =If(IsBlank(emailaddress1), 0, 25)
+    + If("Manager" in jobtitle Or "Director" in jobtitle, 25, 0)
+    + If(wbush_completedactivitycount > 0, 25, 0)

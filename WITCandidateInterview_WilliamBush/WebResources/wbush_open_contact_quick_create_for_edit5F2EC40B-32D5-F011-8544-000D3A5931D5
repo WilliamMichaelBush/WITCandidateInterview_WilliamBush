@@ -1,0 +1,42 @@
+var WBush = window.WBush || {};
+(function (){
+	this.onContactGridRecordSelect = function (executionContext) {
+		var paneId = "Contact_Quick_Edit_Pane";
+		var eventSource = executionContext.getEventSource();
+		
+		var navArgs = {
+			pageType: "entityrecord",
+			entityName: eventSource.getEntityName(),
+			entityId: eventSource.getId(),
+			formId: "38f19dee-b2d5-f011-8544-000d3a5931d5"
+		};
+		
+		function createAndNavigatePane(){
+			Xrm.App.sidePanes.createPane({
+				paneId: paneId,
+				canClose: true
+			}).then((newPane) => {
+				newPane.navigate(navArgs);
+			});
+		}
+		
+		var pane = Xrm.App.sidePanes.getPane(paneId);
+		
+		if(pane){
+			pane.close().then(() => createAndNavigatePane());
+		}else {
+			createAndNavigatePane();
+		}
+	}
+	
+	this.onContactRecordSave = function (executionContext){
+		executionContext.getFormContext().data.entity.addOnPostSave((freshContext) => {
+			var entity = freshContext.getFormContext().data.entity;
+			
+			Xrm.Utility.refreshParentGrid({
+				entityType: entity.getEntityName(),
+				id: entity.getId()
+			});
+		});
+	}
+}).call(WBush);
