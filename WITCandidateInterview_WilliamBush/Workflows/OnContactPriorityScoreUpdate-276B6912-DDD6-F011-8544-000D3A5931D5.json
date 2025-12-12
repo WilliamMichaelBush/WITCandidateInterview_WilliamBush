@@ -1,0 +1,242 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_2cad0"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "When_a_row_is_added,_modified_or_deleted": {
+          "metadata": {
+            "operationMetadataId": "fb835f93-1dc9-428d-9ea0-ef95c266be4b"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "contact",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "wbush_priorityscore",
+              "subscriptionRequest/filterexpression": "statecode eq 0 and statuscode eq 1",
+              "subscriptionRequest/runas": 3
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          },
+          "conditions": []
+        }
+      },
+      "actions": {
+        "Condition": {
+          "actions": {
+            "Update_a_row": {
+              "metadata": {
+                "operationMetadataId": "eb420acb-f987-4929-a797-d75dbad3a59b"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "contacts",
+                  "recordId": "@triggerOutputs()?['body/contactid']",
+                  "item/wbush_followupstatus": 568630000
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              }
+            }
+          },
+          "runAfter": {},
+          "else": {
+            "actions": {
+              "Get_a_row_by_ID_2": {
+                "metadata": {
+                  "operationMetadataId": "cba519ce-172d-48b0-9c1e-061c7ea80884"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "parameters": {
+                    "entityName": "accounts",
+                    "recordId": "@triggerOutputs()?['body/_parentcustomerid_value']",
+                    "$select": "industrycode"
+                  },
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                    "operationId": "GetItem",
+                    "connectionName": "shared_commondataserviceforapps"
+                  }
+                }
+              },
+              "Condition_2": {
+                "actions": {
+                  "Update_a_row_3": {
+                    "metadata": {
+                      "operationMetadataId": "9c29c73b-713b-41aa-a94f-9e4d609b4f29"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "parameters": {
+                        "entityName": "contacts",
+                        "recordId": "@triggerOutputs()?['body/contactid']",
+                        "item/wbush_followupstatus": 568630001
+                      },
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "UpdateOnlyRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      }
+                    }
+                  },
+                  "Add_a_new_row": {
+                    "runAfter": {
+                      "Update_a_row_3": [
+                        "Succeeded"
+                      ]
+                    },
+                    "metadata": {
+                      "operationMetadataId": "12d228b7-b310-4056-a12c-b8cf20dcb6da"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "parameters": {
+                        "entityName": "tasks",
+                        "item/subject": "@concat('High Priority Follow-Up: ', triggerOutputs()?['body/fullname'])",
+                        "item/scheduledend": "@addDays(utcNow(), 2, 'yyyy-MM-ddTHH:mm:ssZ')",
+                        "item/ownerid_task@odata.bind": "@if(empty(triggerOutputs()?['body/_ownerid_value']),null,concat(triggerOutputs()?['body/_ownerid_type'],'(',triggerOutputs()?['body/_ownerid_value'],')'))",
+                        "item/prioritycode": 2,
+                        "item/regardingobjectid_account_task@odata.bind": "@if(empty(triggerOutputs()?['body/_parentcustomerid_value']),null,concat(triggerOutputs()?['body/_parentcustomerid_type'],'(',triggerOutputs()?['body/_parentcustomerid_value'],')'))",
+                        "item/regardingobjectid_contact_task@odata.bind": "@if(empty(triggerOutputs()?['body/_parentcustomerid_value']),null,concat('contacts(',triggerOutputs()?['body/contactid'],')'))"
+                      },
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "CreateRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      }
+                    }
+                  }
+                },
+                "runAfter": {
+                  "Compose": [
+                    "Succeeded"
+                  ]
+                },
+                "else": {
+                  "actions": {
+                    "Update_a_row_2": {
+                      "metadata": {
+                        "operationMetadataId": "8ac907bf-2a33-4927-952a-09b70ac7dc00"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "entityName": "contacts",
+                          "recordId": "@triggerOutputs()?['body/contactid']",
+                          "item/wbush_followupstatus": 568630000
+                        },
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                          "operationId": "UpdateOnlyRecord",
+                          "connectionName": "shared_commondataserviceforapps"
+                        }
+                      }
+                    }
+                  }
+                },
+                "expression": {
+                  "and": [
+                    {
+                      "greater": [
+                        "@triggerOutputs()?['body/wbush_priorityscore']",
+                        50
+                      ]
+                    },
+                    {
+                      "not": {
+                        "equals": [
+                          "@outputs('Get_a_row_by_ID_2')?['body/industrycode']",
+                          null
+                        ]
+                      }
+                    },
+                    {
+                      "or": [
+                        {
+                          "equals": [
+                            "@outputs('Compose')",
+                            "Business Services"
+                          ]
+                        },
+                        {
+                          "equals": [
+                            "@outputs('Compose')",
+                            "Financial"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "8cb29efc-b669-4cfc-a336-3e13a2887ddc"
+                },
+                "type": "If"
+              },
+              "Compose": {
+                "runAfter": {
+                  "Get_a_row_by_ID_2": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "49783d93-2f90-432a-8130-da0ba3c1d3b6"
+                },
+                "type": "Compose",
+                "inputs": "@outputs('Get_a_row_by_ID_2')?['body/industrycode@OData.Community.Display.V1.FormattedValue']"
+              }
+            }
+          },
+          "expression": {
+            "and": [
+              {
+                "equals": [
+                  "_parentcustomerid_value",
+                  null
+                ]
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5dd224bd-9055-45e2-af8a-81e1f8e9996c"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

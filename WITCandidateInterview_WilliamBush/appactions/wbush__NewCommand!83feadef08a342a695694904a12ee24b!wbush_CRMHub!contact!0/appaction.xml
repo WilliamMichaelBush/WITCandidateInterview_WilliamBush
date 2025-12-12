@@ -1,0 +1,36 @@
+<appaction uniquename="wbush__NewCommand!83feadef08a342a695694904a12ee24b!wbush_CRMHub!contact!0">
+  <appmoduleid>
+    <uniquename>wbush_CRMHub</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="NewCommand">
+    <label description="NewCommand" languagecode="1033" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>contact</logicalname>
+  </contextentity>
+  <contextvalue>contact</contextvalue>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>NewCommand!83feadef08a342a695694904a12ee24b</name>
+  <onclickeventjavascriptfunctionname>dh</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>5f2ec40b-32d5-f011-8544-000d3a5931d5</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>0</origin>
+  <sequence>100100005.5000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilityformulacomponentlibraryid>
+    <name>wbush_crmhubdefaultcommandlibrary_d2dea</name>
+  </visibilityformulacomponentlibraryid>
+  <visibilityformulacomponentname>1dd3909bed20497b911949b0aee30c27</visibilityformulacomponentname>
+  <visibilityformulafunctionname>Visible</visibilityformulafunctionname>
+  <visibilitytype>1</visibilitytype>
+</appaction>

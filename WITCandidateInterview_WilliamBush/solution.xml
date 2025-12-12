@@ -1,11 +1,11 @@
-<ImportExportXml version="9.2.25104.169" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25104.169" OrganizationSchemaType="Full" CRMServerServiceabilityVersion="9.2.25111.00170">
+<ImportExportXml version="9.2.25111.170" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25111.170" OrganizationSchemaType="Full" CRMServerServiceabilityVersion="9.2.25111.00170">
   <SolutionManifest>
     <UniqueName>WITCandidateInterview_WilliamBush</UniqueName>
     <LocalizedNames>
       <LocalizedName description="WITCandidateInterview_WilliamBush" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.3</Version>
     <Managed>1</Managed>
     <Publisher>
       <UniqueName>WilliamBushLlc</UniqueName>
@@ -79,10 +79,15 @@
     <RootComponents>
       <RootComponent type="1" schemaName="account" behavior="2" />
       <RootComponent type="1" schemaName="contact" behavior="2" />
+      <RootComponent type="9" schemaName="wbush_eitherpendingornotrequired" behavior="0" />
+      <RootComponent type="29" id="{276b6912-ddd6-f011-8544-000d3a5931d5}" behavior="0" />
+      <RootComponent type="29" id="{2eacbdbb-16d7-f011-8544-000d3a5931d5}" behavior="0" />
+      <RootComponent type="29" id="{46c824d9-18d7-f011-8544-000d3a5931d5}" behavior="0" />
       <RootComponent type="29" id="{772ecb14-06d6-f011-8544-000d3a5931d5}" behavior="0" />
       <RootComponent type="61" schemaName="wbush_open_contact_quick_create_for_edit" behavior="0" />
       <RootComponent type="62" schemaName="wbush_CRMHub" behavior="0" />
       <RootComponent type="80" schemaName="wbush_CRMHub" behavior="0" />
+      <RootComponent type="300" schemaName="wbush_crmhubdefaultcommandlibrary_d2dea" behavior="0" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
@@ -92,26 +97,8 @@
         <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="1" schemaName="entitlement" displayName="Entitlement" solution="msdynce_Service (9.0.5.56)">
-          <package appName="msdynce_Service" version="9.0.25102.1007">msdynce_ServiceAnchor (9.0.25102.1007)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="1" schemaName="incident" displayName="Case" solution="msdynce_Service (9.0.5.56)">
           <package appName="msdynce_Service" version="9.0.25102.1007">msdynce_ServiceAnchor (9.0.25102.1007)</package>
-        </Required>
-        <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="incident" displayName="Case" solution="msdynce_Service (9.0.5.56)">
-          <package appName="msdynce_Service" version="9.0.25102.1007">msdynce_ServiceAnchor (9.0.25102.1007)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="opportunity" displayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">
-          <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
         </Required>
         <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
@@ -119,37 +106,13 @@
         <Required type="1" schemaName="opportunity" displayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)">
           <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
         </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
+        <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="account" parentDisplayName="Account" solution="msdynce_LeadManagement (9.0.4.0066)">
           <package appName="msdynce_LeadManagement" version="9.0.25101.10001">msdynce_LeadManagementAnchor (9.0.25101.10001)</package>
         </Required>
         <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="2" schemaName="businesscard" displayName="Business Card" parentSchemaName="contact" parentDisplayName="Contact" solution="msdynce_SalesPatch201904 (9.0.1912.1007)">
-          <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="2" schemaName="businesscardattributes" displayName="BusinessCardAttributes" parentSchemaName="contact" parentDisplayName="Contact" solution="msdynce_SalesPatch201904 (9.0.1912.1007)">
-          <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="2" schemaName="originatingleadid" displayName="Originating Lead" parentSchemaName="contact" parentDisplayName="Contact" solution="msdynce_LeadManagement (9.0.4.0066)">
-          <package appName="msdynce_LeadManagement" version="9.0.25101.10001">msdynce_LeadManagementAnchor (9.0.25101.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="My Active Cases" displayName="My Active Cases" parentSchemaName="incident" parentDisplayName="Case" solution="msdynce_Service (9.0.5.56)" id="{00000000-0000-0000-00aa-000010001028}">
-          <package appName="msdynce_Service" version="9.0.25102.1007">msdynce_ServiceAnchor (9.0.25102.1007)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="All Cases for Customer" displayName="All Cases for Customer" parentSchemaName="incident" parentDisplayName="Case" solution="msdynce_Service (9.0.5.56)" id="{00000000-0000-0000-00aa-000010001039}">
@@ -162,12 +125,6 @@
           <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
         </Required>
         <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="My Open Opportunities" displayName="My Open Opportunities" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)" id="{00000000-0000-0000-00aa-000010003000}">
-          <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="26" schemaName="All Accounts" displayName="All Accounts" parentSchemaName="account" parentDisplayName="Account" solution="msdynce_AppCommon (9.0.4.0066)" id="{65ffaf9a-e8c5-432d-860b-32f841b00d87}">
@@ -188,56 +145,8 @@
         <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="26" schemaName="Recent Opportunities" displayName="Recent Opportunities" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)" id="{9c3f7ee8-eca7-e211-9fb6-00155dd0ea05}">
-          <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="All Entitlements" displayName="All Entitlements" parentSchemaName="entitlement" parentDisplayName="Entitlement" solution="msdynce_Service (9.0.5.56)" id="{aa69e7e2-913a-4a5a-8609-8ca443554909}">
-          <package appName="msdynce_Service" version="9.0.25102.1007">msdynce_ServiceAnchor (9.0.25102.1007)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="26" schemaName="Recent Cases" displayName="Recent Cases" parentSchemaName="incident" parentDisplayName="Case" solution="msdynce_Service (9.0.5.56)" id="{ebd1d24a-eea7-e211-9fb6-00155dd0ea05}">
-          <package appName="msdynce_Service" version="9.0.25102.1007">msdynce_ServiceAnchor (9.0.25102.1007)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="59" schemaName="Top Customers" displayName="Top Customers" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)" id="{8bc5fb18-48f2-4782-9e16-3d452fa4ddce}">
           <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
-        </Required>
-        <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="59" schemaName="Top Customers" displayName="Top Customers" parentSchemaName="opportunity" parentDisplayName="Opportunity" solution="msdynce_Sales (9.0.4.0076)" id="{8bc5fb18-48f2-4782-9e16-3d452fa4ddce}">
-          <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="59" schemaName="Case Mix (By Business Unit)" displayName="Case Mix (By Business Unit)" parentSchemaName="incident" parentDisplayName="Case" solution="msdynce_Service (9.0.5.56)" id="{f10375a6-4893-de11-97d4-00155da3b01e}">
-          <package appName="msdynce_Service" version="9.0.25102.1007">msdynce_ServiceAnchor (9.0.25102.1007)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="59" schemaName="Entitlements Expiration" displayName="Entitlements Expiration" parentSchemaName="entitlement" parentDisplayName="Entitlement" solution="msdynce_Service (9.0.5.56)" id="{fdb919bb-c6fc-4fc8-8fa5-67ace68e41d1}">
-          <package appName="msdynce_Service" version="9.0.25102.1007">msdynce_ServiceAnchor (9.0.25102.1007)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="60" displayName="Contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}">
-          <package appName="msdynce_AppCommon" version="9.0.25101.10001">msdynce_AppCommonAnchor (9.0.25101.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="60" displayName="account contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
-          <package appName="msdynce_AppCommon" version="9.0.25101.10001">msdynce_AppCommonAnchor (9.0.25101.10001)</package>
         </Required>
         <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
@@ -245,19 +154,13 @@
         <Required type="60" displayName="account contact card" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
           <package appName="msdynce_AppCommon" version="9.0.25101.10001">msdynce_AppCommonAnchor (9.0.25101.10001)</package>
         </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
+        <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="Overview" solution="OmnichannelBase (1.10.0.110)" id="{64740de3-ec79-e811-8162-000d3aa2725e}">
           <package appName="UnifiedRoutingPrime" version="1.5.27.127">UnifiedRoutingPrimeAnchor (1.5.27.127)</package>
         </Required>
         <Dependent type="80" schemaName="wbush_CRMHub" displayName="CRM Hub" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="61" schemaName="AppCommon/Contact/Contact_main_system_library.js" displayName="AppCommon/Contact/Contact_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
-          <package appName="msdynce_AppCommon" version="9.0.25101.10001">msdynce_AppCommonAnchor (9.0.25101.10001)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="msdyn_/Account/AssetCommon.Account.Library.js" displayName="msdyn_/Account/AssetCommon.Account.Library.js" solution="msdyn_AssetCommon (1.0.50.1)">
@@ -275,12 +178,6 @@
         <Required type="61" schemaName="msdyn_/Scripts/WhoKnowsWhomLoader.js" displayName="msdyn_/Scripts/WhoKnowsWhomLoader.js" solution="msdyn_connectiongraph (9.3.25101.10002)">
           <package appName="msdynce_SalesInsights" version="9.0.25101.10003">msdynce_SalesInsightsAnchor (9.0.25101.10003)</package>
         </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="61" schemaName="msdyn_/Scripts/WhoKnowsWhomLoader.js" displayName="msdyn_/Scripts/WhoKnowsWhomLoader.js" solution="msdyn_connectiongraph (9.3.25101.10002)">
-          <package appName="msdynce_SalesInsights" version="9.0.25101.10003">msdynce_SalesInsightsAnchor (9.0.25101.10003)</package>
-        </Required>
         <Dependent type="60" displayName="Quick Main" parentDisplayName="Contact" id="{38f19dee-b2d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
       <MissingDependency>
@@ -288,12 +185,6 @@
           <package appName="msdyn_AcceleratedSales" version="9.1.25101.10004">msdyn_AcceleratedSalesAnchor (9.1.25101.10004)</package>
         </Required>
         <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="61" schemaName="msdyn_SalesOmniChannel/SalesPhoneNumber.Library.js" displayName="msdyn_SalesOmniChannel/SalesPhoneNumber.Library.js" solution="msdyn_SalesOmniChannel (9.1.25101.10004)">
-          <package appName="msdyn_AcceleratedSales" version="9.1.25101.10004">msdyn_AcceleratedSalesAnchor (9.1.25101.10004)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="msdyn_SalesOmniChannel/SalesPhoneNumber.Library.js" displayName="msdyn_SalesOmniChannel/SalesPhoneNumber.Library.js" solution="msdyn_SalesOmniChannel (9.1.25101.10004)">
@@ -305,85 +196,25 @@
         <Required type="61" schemaName="msdyn_talkingpointsloader.js" displayName="msdyn_talkingpointsloader.js" solution="msdynce_Talkingpoints (9.1.0.59)">
           <package appName="msdynce_SalesInsights" version="9.0.25101.10003">msdynce_SalesInsightsAnchor (9.0.25101.10003)</package>
         </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="61" schemaName="msdyn_talkingpointsloader.js" displayName="msdyn_talkingpointsloader.js" solution="msdynce_Talkingpoints (9.1.0.59)">
-          <package appName="msdynce_SalesInsights" version="9.0.25101.10003">msdynce_SalesInsightsAnchor (9.0.25101.10003)</package>
-        </Required>
         <Dependent type="60" displayName="Quick Main" parentDisplayName="Contact" id="{38f19dee-b2d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">
           <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
         </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
+        <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="61" schemaName="Sales/ClientCommon/Sales_ClientCommon.js" displayName="Sales/ClientCommon/Sales_ClientCommon.js" solution="msdynce_Sales (9.0.4.0076)">
-          <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
-        </Required>
-        <Dependent type="60" displayName="Quick Main" parentDisplayName="Contact" id="{38f19dee-b2d5-f011-8544-000d3a5931d5}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="61" schemaName="Sales/Contact/Contact_main_system_library.js" displayName="Sales/Contact/Contact_main_system_library.js" solution="msdynce_SalesPatch201904 (9.0.1912.1007)">
-          <package appName="msdynce_Sales" version="9.0.25101.10003">msdynce_SalesAnchor (9.0.25101.10003)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="66" schemaName="Consent.ContactabilityControl.ContactabilityControl" displayName="Consent.ContactabilityControl.ContactabilityControl" solution="DynamicsMKT_Consent (1.1.59247.57)">
-          <package appName="CxpSales" version="1.1.59247.57">DynamicsMKT_CxpSalesAnchorSolution (1.1.59247.57)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="66" schemaName="Consent.ContactabilityGridControl.ContactabilityGridControl" displayName="Consent.ContactabilityGridControl.ContactabilityGridControl" solution="DynamicsMKT_Consent (1.1.59247.57)">
-          <package appName="CxpSales" version="1.1.59247.57">DynamicsMKT_CxpSalesAnchorSolution (1.1.59247.57)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="66" schemaName="Intelligence.BusinessCardReaderControl.BusinessCardReader" displayName="Intelligence.BusinessCardReaderControl.BusinessCardReader" solution="BaseCustomControlsCore (9.0.2510.4008)">
-          <package appName="Base Custom Controls" version="9.0.2510.4008">BaseCustomControlsCore (9.0.2510.4008)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="66" schemaName="Microsoft.AddressInputUCI" displayName="Microsoft.AddressInputUCI" solution="BaseCustomControlsCore (9.0.2510.4008)">
-          <package appName="Base Custom Controls" version="9.0.2510.4008">BaseCustomControlsCore (9.0.2510.4008)</package>
+        <Required type="66" schemaName="Microsoft.AddressInputUCI" displayName="Microsoft.AddressInputUCI" solution="BaseCustomControlsCore (9.0.2511.1006)">
+          <package appName="Base Custom Controls" version="9.0.2511.1006">BaseCustomControlsCore (9.0.2511.1006)</package>
         </Required>
         <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="Microsoft.AddressInputUCI" displayName="Microsoft.AddressInputUCI" solution="BaseCustomControlsCore (9.0.2510.4008)">
-          <package appName="Base Custom Controls" version="9.0.2510.4008">BaseCustomControlsCore (9.0.2510.4008)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2510.4008)">
-          <package appName="Base Custom Controls" version="9.0.2510.4008">BaseCustomControlsCore (9.0.2510.4008)</package>
+        <Required type="66" schemaName="Microsoft.PowerApps.PowerAppsOneGrid" displayName="Microsoft.PowerApps.PowerAppsOneGrid" solution="BaseCustomControlsCore (9.0.2511.1006)">
+          <package appName="Base Custom Controls" version="9.0.2511.1006">BaseCustomControlsCore (9.0.2511.1006)</package>
         </Required>
         <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2510.4008)">
-          <package appName="Base Custom Controls" version="9.0.2510.4008">BaseCustomControlsCore (9.0.2510.4008)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.LeadHygiene.ValidatedFieldControl" displayName="MscrmControls.LeadHygiene.ValidatedFieldControl" solution="msdyn_leadhygiene (9.1.2509.4001)">
-          <package appName="msdyn_AcceleratedSales" version="9.1.25101.10004">msdyn_AcceleratedSalesAnchor (9.1.25101.10004)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="66" schemaName="MscrmControls.TalkingPointsControl.TalkingPoints" displayName="MscrmControls.TalkingPointsControl.TalkingPoints" solution="msdynce_Talkingpoints (9.1.0.59)">
-          <package appName="msdynce_SalesInsights" version="9.0.25101.10003">msdynce_SalesInsightsAnchor (9.0.25101.10003)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
       </MissingDependency>
       <MissingDependency>
         <Required type="66" schemaName="msdyn_MscrmControls.TreeView.TreeViewControl" displayName="msdyn_MscrmControls.TreeView.TreeViewControl" solution="msdyn_AssetCommon (1.0.50.1)">
@@ -398,18 +229,6 @@
         <Dependent type="60" displayName="Account - Quick Edit Contacts" parentDisplayName="Account" id="{106840c5-a0d5-f011-8544-000d3a5931d5}" />
       </MissingDependency>
       <MissingDependency>
-        <Required type="66" schemaName="msdyn_SalesOmniChannel.SalesPhoneNumberControl" displayName="msdyn_SalesOmniChannel.SalesPhoneNumberControl" solution="msdyn_SalesOmniChannel (9.1.25101.10004)">
-          <package appName="msdyn_AcceleratedSales" version="9.1.25101.10004">msdyn_AcceleratedSalesAnchor (9.1.25101.10004)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="66" schemaName="MsdynControls.WKWControls.ConnectionsWidget" displayName="MsdynControls.WKWControls.ConnectionsWidget" solution="msdyn_connectiongraph (9.3.25101.10002)">
-          <package appName="msdynce_SalesInsights" version="9.0.25101.10003">msdynce_SalesInsightsAnchor (9.0.25101.10003)</package>
-        </Required>
-        <Dependent type="60" displayName="Contact" parentDisplayName="Contact" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}" />
-      </MissingDependency>
-      <MissingDependency>
         <Required type="SettingDefinition" displayName="AllowNotificationsEarlyAccess" solution="AppNotifications (10.0.0.16)" id.uniquename="AllowNotificationsEarlyAccess">
           <package appName="PowerAppsUnifiedClientExtensionApp Package" version="1.0.0.62">msft_PowerAppsUnifiedClientInfraExtensions (1.0.0.62)</package>
         </Required>
@@ -420,6 +239,24 @@
           <package appName="PowerAppsAppFramework Package" version="1.0.0.23">PowerAppsAppFramework_Anchor (1.0.0.23)</package>
         </Required>
         <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=wbush_CRMHub,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="wbush_CRMHub" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="appcopilotenabled" solution="msdyn_AppCopilotAppInfraSettings (9.2.2025062.250606027)" id.uniquename="appcopilotenabled">
+          <package appName="PowerAppsAppCopilotApp Package" version="1.0.0.2">msdyn_SuggestedAction (1.0.0.2)</package>
+        </Required>
+        <Dependent type="OrganizationSetting" displayName="appcopilotenabled" id.settingdefinitionid.uniquename="appcopilotenabled" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="EnableCopilotAnswerControl" solution="msdyn_CopilotAnswerControl (9.1.2024085.240823014)" id.uniquename="EnableCopilotAnswerControl">
+          <package appName="PowerAppsMobile Package" version="9.1.2024085.240823014">msdyn_CopilotAnswerControl (9.1.2024085.240823014)</package>
+        </Required>
+        <Dependent type="OrganizationSetting" displayName="EnableCopilotAnswerControl" id.settingdefinitionid.uniquename="EnableCopilotAnswerControl" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="EnableFormInsightsAppSetting" solution="msdyn_FormsInsightSettings (1.0.0.5)" id.uniquename="EnableFormInsightsAppSetting">
+          <package appName="PowerAppsFormsApp Package" version="1.0.0.5">msdyn_FormsInsightSettings (1.0.0.5)</package>
+        </Required>
+        <Dependent type="OrganizationSetting" displayName="EnableFormInsightsAppSetting" id.settingdefinitionid.uniquename="EnableFormInsightsAppSetting" />
       </MissingDependency>
     </MissingDependencies>
   </SolutionManifest>
