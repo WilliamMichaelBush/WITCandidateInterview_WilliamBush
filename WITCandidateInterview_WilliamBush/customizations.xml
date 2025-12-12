@@ -1,4 +1,4 @@
-<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25104.169" OrganizationSchemaType="Full" CRMServerServiceabilityVersion="9.2.25111.00170">
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25111.170" OrganizationSchemaType="Full" CRMServerServiceabilityVersion="9.2.25111.00170">
   <Entities>
     <Entity>
       <Name LocalizedName="Account" OriginalName="">Account</Name>
@@ -1867,6 +1867,45 @@
               </Descriptions>
               <FormulaDefinitionFileName>/Formulas/contact-wbush_completedactivitycount.xaml</FormulaDefinitionFileName>
             </attribute>
+            <attribute PhysicalName="wbush_FollowUpStatus">
+              <Type>picklist</Type>
+              <Name>wbush_followupstatus</Name>
+              <LogicalName>wbush_followupstatus</LogicalName>
+              <RequiredLevel>required</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.2</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <IsDataSourceSecret>0</IsDataSourceSecret>
+              <AutoNumberFormat></AutoNumberFormat>
+              <IsSearchable>0</IsSearchable>
+              <IsFilterable>0</IsFilterable>
+              <IsRetrievable>0</IsRetrievable>
+              <IsLocalizable>0</IsLocalizable>
+              <AppDefaultValue>568630002</AppDefaultValue>
+              <OptionSetName>wbush_eitherpendingornotrequired</OptionSetName>
+              <displaynames>
+                <displayname description="Follow-Up Status" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
             <attribute PhysicalName="wbush_PriorityScore">
               <Type>int</Type>
               <Name>wbush_priorityscore</Name>
@@ -3138,13 +3177,135 @@
         <LocalizedName languagecode="1033" description="On Account Revenue Modified" />
       </LocalizedNames>
     </Workflow>
+    <Workflow WorkflowId="{276b6912-ddd6-f011-8544-000d3a5931d5}" Name="On Contact Priority Score Update">
+      <JsonFileName>/Workflows/OnContactPriorityScoreUpdate-276B6912-DDD6-F011-8544-000D3A5931D5.json</JsonFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>5</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.2</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ModernFlowType>0</ModernFlowType>
+      <PrimaryEntity>none</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="On Contact Priority Score Update" />
+      </LocalizedNames>
+    </Workflow>
+    <Workflow WorkflowId="{2eacbdbb-16d7-f011-8544-000d3a5931d5}" Name="On Contact Priority Score Component Modified">
+      <JsonFileName>/Workflows/OnContactPriorityScoreComponentModified-2EACBDBB-16D7-F011-8544-000D3A5931D5.json</JsonFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>5</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.2</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ModernFlowType>0</ModernFlowType>
+      <PrimaryEntity>none</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="On Contact Priority Score Component Modified" />
+      </LocalizedNames>
+    </Workflow>
+    <Workflow WorkflowId="{46c824d9-18d7-f011-8544-000d3a5931d5}" Name="dfgh">
+      <XamlFileName>/Workflows/dfgh-46C824D9-18D7-F011-8544-000D3A5931D5.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>3</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>1</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>1</SyncWorkflowLogOnFailure>
+      <StateCode>0</StateCode>
+      <StatusCode>1</StatusCode>
+      <CreateStage>40</CreateStage>
+      <RunAs>1</RunAs>
+      <SdkMessageId>{47c824d9-18d7-f011-8544-000d3a5931d5}</SdkMessageId>
+      <UniqueName>dfgh</UniqueName>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.2</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <FormId>{00000000-0000-0000-0000-000000000000}</FormId>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ModernFlowType>0</ModernFlowType>
+      <PrimaryEntity>Contact</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="dfgh" />
+      </LocalizedNames>
+    </Workflow>
   </Workflows>
   <FieldSecurityProfiles></FieldSecurityProfiles>
   <Templates />
   <EntityMaps />
   <EntityRelationships />
   <OrganizationSettings />
-  <optionsets />
+  <optionsets>
+    <optionset Name="wbush_eitherpendingornotrequired" localizedName="Either Pending Or Not Required">
+      <OptionSetType>picklist</OptionSetType>
+      <IsGlobal>1</IsGlobal>
+      <IntroducedVersion>1.0.0.2</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <ExternalTypeName></ExternalTypeName>
+      <displaynames>
+        <displayname description="Either Pending Or Not Required" languagecode="1033" />
+      </displaynames>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+      <options>
+        <option value="568630002" ExternalValue="" IsHidden="1">
+          <labels>
+            <label description="Unspecified" languagecode="1033" />
+          </labels>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+        </option>
+        <option value="568630000" ExternalValue="" IsHidden="0">
+          <labels>
+            <label description="Not Required" languagecode="1033" />
+          </labels>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+        </option>
+        <option value="568630001" ExternalValue="" IsHidden="0">
+          <labels>
+            <label description="Pending" languagecode="1033" />
+          </labels>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+        </option>
+      </options>
+    </optionset>
+  </optionsets>
   <WebResources>
     <WebResource>
       <WebResourceId>{5f2ec40b-32d5-f011-8544-000d3a5931d5}</WebResourceId>
@@ -3209,6 +3370,15 @@
       <LocalizedNames>
         <LocalizedName description="CRM Hub" languagecode="1033" />
       </LocalizedNames>
+      <appelements>
+        <appelement uniquename="wbush_wbush_CRMHub_canvasappid_wbush_crmhubdefaultcommandlibrary_d2dea">
+          <canvasappid>
+            <name>wbush_crmhubdefaultcommandlibrary_d2dea</name>
+          </canvasappid>
+          <iscustomizable>1</iscustomizable>
+          <name>wbush_wbush_CRMHub_canvasappid_wbush_crmhubdefaultcommandlibrary_d2dea</name>
+        </appelement>
+      </appelements>
       <appsettings>
         <appsetting settingdefinitionid.uniquename="AllowNotificationsEarlyAccess">
           <iscustomizable>1</iscustomizable>
@@ -3222,6 +3392,38 @@
     </AppModule>
   </AppModules>
   <EntityDataProviders />
+  <CanvasApps>
+    <CanvasApp>
+      <Name>wbush_crmhubdefaultcommandlibrary_d2dea</Name>
+      <AppVersion>2025-12-12T06:01:10Z</AppVersion>
+      <Status>Ready</Status>
+      <CreatedByClientVersion>3.25112.11.0</CreatedByClientVersion>
+      <MinClientVersion>0.0.0.0</MinClientVersion>
+      <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","sienaVersion":"20251212T054905Z-3.25112.11.0","deviceCapabilities":"","supportsPortrait":"true","supportsLandscape":"false","primaryFormFactor":"Phone","publisherVersion":"3.25112.11.0","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false"}</Tags>
+      <IsCdsUpgraded>0</IsCdsUpgraded>
+      <GalleryItemId xsi:nil="true"></GalleryItemId>
+      <BackgroundColor>rgba(0, 176, 240, 1)</BackgroundColor>
+      <DisplayName>CRMHub_DefaultCommandLibrary</DisplayName>
+      <Description xsi:nil="true"></Description>
+      <CommitMessage>Saved by Command designer.</CommitMessage>
+      <Publisher xsi:nil="true"></Publisher>
+      <AuthorizationReferences>[]</AuthorizationReferences>
+      <ConnectionReferences>{}</ConnectionReferences>
+      <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds"},"dataSources":{}}}</DatabaseReferences>
+      <AppComponents>[]</AppComponents>
+      <AppComponentDependencies>[]</AppComponentDependencies>
+      <CanConsumeAppPass>1</CanConsumeAppPass>
+      <CanvasAppType>1</CanvasAppType>
+      <BypassConsent>0</BypassConsent>
+      <AdminControlBypassConsent>0</AdminControlBypassConsent>
+      <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+      <IsCustomizable>1</IsCustomizable>
+      <BackgroundImageUri>/CanvasApps/wbush_crmhubdefaultcommandlibrary_d2dea_BackgroundImageUri</BackgroundImageUri>
+      <DocumentUri>/CanvasApps/wbush_crmhubdefaultcommandlibrary_d2dea_DocumentUri.msapp</DocumentUri>
+    </CanvasApp>
+  </CanvasApps>
   <connectionreferences>
     <connectionreference connectionreferencelogicalname="new_sharedcommondataserviceforapps_2cad0">
       <connectionreferencedisplayname>Microsoft Dataverse</connectionreferencedisplayname>
